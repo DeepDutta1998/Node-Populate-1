@@ -1,0 +1,32 @@
+<%- include("partial/head"); %>
+<div class="container">
+  <%- include("partial/nav"); %>
+
+  <h1>Demonstrate The Concept Of Populate In Mongoose</h1>
+  <% if (message.length>0) {%>
+  <div class="alert alert-success"><%= message%></div>
+  <%}%>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">SubCatgory Name</th>
+        <th scope="col">Category Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(let data of displaydata) {%>
+      <tr>
+        <td><%= data.subCategory.subName%></td>
+        <td><%= data.category.cName%></td>
+        <td><%= data.category.cType%></td>
+        <td><%= data.pName%></td>
+        <td><%= data.pPrice%></td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
+<%- include("partial/bottom"); %>
